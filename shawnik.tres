@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dae6tyxov7qui"]
+
+[ext_resource type="Texture2D" uid="uid://dcblqqhen3vj5" path="res://RabbitRushMainGamePixels-Sheet(1).png" id="1_d1s6e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdeh0"]
+atlas = ExtResource("1_d1s6e")
+region = Rect2(480, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkd08"]
+atlas = ExtResource("1_d1s6e")
+region = Rect2(480, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdeh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkd08")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]

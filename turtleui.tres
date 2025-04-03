@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cfmoglpki7jcx"]
+
+[ext_resource type="Texture2D" uid="uid://bt1w4l31cwxg3" path="res://turtleUI.png" id="1_8a05a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuqsh"]
+atlas = ExtResource("1_8a05a")
+region = Rect2(0, 0, 160, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tcim"]
+atlas = ExtResource("1_8a05a")
+region = Rect2(0, 112, 160, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmeln"]
+atlas = ExtResource("1_8a05a")
+region = Rect2(0, 0, 160, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhn36"]
+atlas = ExtResource("1_8a05a")
+region = Rect2(0, 224, 160, 112)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuqsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tcim")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmeln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhn36")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]

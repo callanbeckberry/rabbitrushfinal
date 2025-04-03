@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://oo2o4vtsg3b2"]
+
+[ext_resource type="Texture2D" uid="uid://dcblqqhen3vj5" path="res://RabbitRushMainGamePixels-Sheet(1).png" id="1_qcsme"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndouf"]
+atlas = ExtResource("1_qcsme")
+region = Rect2(544, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17gwy"]
+atlas = ExtResource("1_qcsme")
+region = Rect2(544, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3f6l"]
+atlas = ExtResource("1_qcsme")
+region = Rect2(544, 128, 32, 32)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"water_bump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndouf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17gwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3f6l")
+}],
+"loop": true,
+"name": &"water_walk",
+"speed": 3.0
+}]
