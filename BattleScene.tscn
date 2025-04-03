@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=3 uid="uid://cp44ycryov0i3"]
+
+[ext_resource type="Script" path="res://BattleScene.gd" id="1_pjyq6"]
+[ext_resource type="Texture2D" uid="uid://bs7py6heeqa8f" path="res://assets/battle/BattleBG.png" id="2_n0uju"]
+[ext_resource type="SpriteFrames" uid="uid://cefhyh10disf4" path="res://assets/battle/RabbitBattle.tres" id="3_c7v4q"]
+[ext_resource type="SpriteFrames" uid="uid://c7aetc3v00xtc" path="res://assets/battle/TurtleBattle.tres" id="4_wxqr5"]
+[ext_resource type="FontFile" uid="uid://jnicypq4ev8g" path="res://orangekid.otf" id="5_bhuh5"]
+[ext_resource type="SpriteFrames" uid="uid://cbqndgwp6fget" path="res://assets/battle/battlebuttons.tres" id="6_r6ucu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e6f6"]
+atlas = ExtResource("2_n0uju")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdbrx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0821"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4qpy"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_pjyq6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("AtlasTexture_5e6f6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Battleground" type="ColorRect" parent="."]
+visible = false
+offset_left = 640.0
+offset_right = 1272.0
+offset_bottom = 718.0
+color = Color(0.556863, 0.388235, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(771, 462)
+sprite_frames = ExtResource("3_c7v4q")
+animation = &"idle"
+
+[node name="PlayerSprite2" type="AnimatedSprite2D" parent="."]
+position = Vector2(981, 409)
+sprite_frames = ExtResource("4_wxqr5")
+animation = &"idle"
+
+[node name="SpeechBubble" type="Panel" parent="PlayerSprite2"]
+visible = false
+offset_left = -152.0
+offset_top = -152.0
+offset_right = 168.0
+offset_bottom = -80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdbrx")
+
+[node name="Text" type="Label" parent="PlayerSprite2/SpeechBubble"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 304.0
+offset_bottom = 64.0
+text = "Enemy Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 624.0
+offset_bottom = 718.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackBar" type="ProgressBar" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054487
+anchor_right = 0.054487
+anchor_bottom = 0.0139276
+offset_left = 64.0
+offset_top = 576.0
+offset_right = 576.0
+offset_bottom = 603.0
+theme_override_fonts/font = ExtResource("5_bhuh5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_q0821")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n4qpy")
+rounded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BarLabel" type="Label" parent="UI/AttackBar"]
+layout_mode = 0
+offset_top = -45.0
+offset_right = 200.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bhuh5")
+theme_override_font_sizes/font_size = 30
+text = "Attack Charge"
+
+[node name="DirectionPrompt" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(405, 398)
+scale = Vector2(3.7039, 3.7039)
+sprite_frames = ExtResource("6_r6ucu")
+animation = &"up"
+
+[node name="AttackMenu" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 209.0
+offset_right = 579.0
+offset_bottom = 501.0
+
+[node name="MenuLabel" type="Label" parent="UI/AttackMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_bhuh5")
+theme_override_font_sizes/font_size = 30
+text = "Select Attack:"
+
+[node name="SpeedUpLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 636.0
+offset_right = 910.0
+offset_bottom = 678.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_bhuh5")
+theme_override_font_sizes/font_size = 45
+text = "Speed up the battle: 0/100 ¥ added"
+horizontal_alignment = 1
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="EnemyAttackTimer" type="Timer" parent="Timers"]
+
+[node name="SpeechBubbleTimer" type="Timer" parent="Timers"]
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["cameras"]]
+position = Vector2(640, 360)
+enabled = false
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.00953191, 0.591989, 0.71223, 1)

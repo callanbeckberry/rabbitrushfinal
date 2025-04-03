@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cefhyh10disf4"]
+
+[ext_resource type="Texture2D" uid="uid://cmnxm0gkhcy6m" path="res://assets/battle/RabbitBattle 4.png" id="1_pgeyi"]
+[ext_resource type="Texture2D" uid="uid://b2jdejafnksbk" path="res://assets/battle/RabbitBattle 1.png" id="2_q102a"]
+[ext_resource type="Texture2D" uid="uid://bbmwgost20q8o" path="res://assets/battle/RabbitBattle 3.png" id="3_k701k"]
+[ext_resource type="Texture2D" uid="uid://ddityq1m0ep6t" path="res://assets/battle/RabbitBattle 2.png" id="4_o00ay"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pgeyi")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q102a")
+}],
+"loop": true,
+"name": &"charged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k701k")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o00ay")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

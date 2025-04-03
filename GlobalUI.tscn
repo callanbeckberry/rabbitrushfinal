@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://baywa77ock5xw"]
+
+[ext_resource type="Script" path="res://GlobalUI.gd" id="1_rctxn"]
+[ext_resource type="FontFile" uid="uid://ir6xbdt0y0x" path="res://alagard_by_pix3m-d6awiwp.ttf" id="2_fd3an"]
+
+[node name="GlobalUI" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_rctxn")
+
+[node name="PersistentUI" type="Control" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TimeLabel" type="Label" parent="PersistentUI"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 176.0
+offset_right = 336.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("2_fd3an")
+theme_override_font_sizes/font_size = 20
+text = "Time: 00:00"
+horizontal_alignment = 2
+
+[node name="YenLabel" type="Label" parent="PersistentUI"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 130.0
+offset_right = 336.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("2_fd3an")
+theme_override_font_sizes/font_size = 40
+text = "¥ 0 spent"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqu0yqiudnb0f"]
+
+[ext_resource type="Script" path="res://dialogue_manager.gd" id="1_5cnof"]
+[ext_resource type="Texture2D" uid="uid://cp4sf4ytdpd46" path="res://pixil-frame-0.png" id="2_mlmel"]
+[ext_resource type="Texture2D" uid="uid://p2rmory4slss" path="res://icon.svg" id="2_vtdlo"]
+[ext_resource type="FontFile" uid="uid://jnicypq4ev8g" path="res://orangekid.otf" id="3_jybey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3t77"]
+atlas = ExtResource("2_vtdlo")
+
+[node name="DialogueManager" type="CanvasLayer"]
+script = ExtResource("1_5cnof")
+
+[node name="DialogueBox" type="NinePatchRect" parent="."]
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = -0.1
+offset_left = -320.0
+offset_top = -64.0
+offset_right = 192.0
+offset_bottom = 128.0
+texture = ExtResource("2_mlmel")
+region_rect = Rect2(0, 0, 256, 144)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015625
+anchor_top = 0.0104167
+anchor_right = 0.109375
+anchor_bottom = 0.0104167
+offset_left = 192.0
+offset_right = 448.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jybey")
+theme_override_font_sizes/font_size = 30
+text = "NPC name"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox"]
+layout_direction = 2
+layout_mode = 1
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 504.0
+offset_bottom = 184.0
+theme_override_constants/separation = 10
+
+[node name="Portrait" type="TextureRect" parent="DialogueBox/HBoxContainer"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_o3t77")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DialogueText" type="Label" parent="DialogueBox/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jybey")
+theme_override_font_sizes/font_size = 20
+text = "\"This is sample dialogue text. Press any key to continue."
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.03

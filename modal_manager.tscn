@@ -1,0 +1,199 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckbk41crfeyt2"]
+
+[ext_resource type="Script" path="res://modal_manager.gd" id="1_lrd8s"]
+[ext_resource type="Texture2D" uid="uid://cxuryokjriuck" path="res://Rabbit mock-Sheet.png" id="2_pe3k1"]
+[ext_resource type="FontFile" uid="uid://jnicypq4ev8g" path="res://orangekid.otf" id="3_c308q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_515a2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xflpt"]
+texture = SubResource("CanvasTexture_515a2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aodf"]
+atlas = ExtResource("2_pe3k1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no3wd"]
+
+[node name="ModalManager" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_lrd8s")
+
+[node name="ModalContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ModalContainer"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.482353)
+
+[node name="Content" type="Panel" parent="ModalContainer"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 0
+offset_left = 344.0
+offset_top = 152.0
+offset_right = 944.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_xflpt")
+
+[node name="Portrait" type="TextureRect" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 592.0
+offset_bottom = 168.0
+texture = SubResource("AtlasTexture_1aodf")
+
+[node name="Title" type="Label" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 176.0
+offset_right = 392.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c308q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 216.0
+offset_right = 512.0
+offset_bottom = 352.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c308q")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TimerLabel" type="Label" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 360.0
+offset_right = 400.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c308q")
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 360.0
+offset_right = 593.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("3_c308q")
+
+[node name="SkipButton" type="Button" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 360.0
+offset_right = 593.0
+offset_bottom = 391.0
+theme_override_fonts/font = ExtResource("3_c308q")
+text = "Insert coin to speed up"
+
+[node name="Inventory" type="RichTextLabel" parent="ModalContainer/Content"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 216.0
+offset_right = 512.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+
+[node name="MainMenuContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Background" type="ColorRect" parent="MainMenuContainer"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Content" type="Control" parent="MainMenuContainer"]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Image" type="TextureRect" parent="MainMenuContainer/Content"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+texture = SubResource("AtlasTexture_no3wd")
+
+[node name="Text" type="Label" parent="MainMenuContainer/Content"]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 518.0
+offset_right = 898.0
+offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("3_c308q")
+
+[node name="AftermathContainer" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="AftermathContainer"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Content" type="Control" parent="AftermathContainer"]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Image" type="TextureRect" parent="AftermathContainer/Content"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 24.0
+offset_right = 1011.0
+offset_bottom = 424.0
+
+[node name="Title" type="Label" parent="AftermathContainer/Content"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 448.0
+offset_right = 936.0
+offset_bottom = 471.0
+theme_override_fonts/font = ExtResource("3_c308q")
+autowrap_mode = 3
+
+[node name="Text" type="Label" parent="AftermathContainer/Content"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 520.0
+offset_right = 1088.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_c308q")
+autowrap_mode = 3
+
+[node name="NextText" type="Label" parent="AftermathContainer/Content"]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 648.0
+offset_right = 1120.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_c308q")
+
+[node name="TimerLabel" type="Label" parent="AftermathContainer/Content"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 592.0
+offset_right = 256.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("3_c308q")

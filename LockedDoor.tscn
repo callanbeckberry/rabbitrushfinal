@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://t0v087ejns3i"]
+
+[ext_resource type="Script" path="res://LockedDoor.gd" id="1_c22k8"]
+[ext_resource type="Texture2D" uid="uid://cxuryokjriuck" path="res://Rabbit mock-Sheet.png" id="2_mddcn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0bxn"]
+atlas = ExtResource("2_mddcn")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7n7r"]
+size = Vector2(48, 48)
+
+[node name="DoorOverlay" type="StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_c22k8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16.0001, 16.0001)
+rotation = 1.57079
+texture = SubResource("AtlasTexture_k0bxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.0001, 16.0001)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_p7n7r")

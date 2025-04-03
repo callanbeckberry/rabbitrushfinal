@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d5hqkwr3swuj"]
+
+[ext_resource type="Texture2D" uid="uid://br8mwch7r1ebg" path="res://Frame 3.png" id="1_8sqdw"]
+[ext_resource type="Script" path="res://npc.gd" id="1_61llj"]
+[ext_resource type="SpriteFrames" uid="uid://dt8jolcshe8tx" path="res://villager_frames.tres" id="3_egk6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tevld"]
+atlas = ExtResource("1_8sqdw")
+region = Rect2(360, 320, 128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62nqu"]
+size = Vector2(3, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x05pv"]
+
+[node name="NPC" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_61llj")
+portrait_texture = SubResource("AtlasTexture_tevld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = ExtResource("3_egk6c")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_62nqu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_x05pv")
+debug_color = Color(0.925791, 0.0109178, 0.670648, 0.42)

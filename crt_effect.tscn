@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://beiw4nkmpu60i"]
+
+[ext_resource type="Script" path="res://crt_shader.gd" id="1_6svms"]
+[ext_resource type="Material" uid="uid://dl851j7smypj8" path="res://crt_material.tres" id="2_a3t33"]
+
+[node name="CRTEffect" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_6svms")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_a3t33")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

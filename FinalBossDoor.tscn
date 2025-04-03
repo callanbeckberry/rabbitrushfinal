@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqiuu6jec1b64"]
+
+[ext_resource type="Script" path="res://FinalBossDoor.gd" id="1_3bbuy"]
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_3bbuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://j086md4aexb5"]
+
+[ext_resource type="Script" path="res://SpeechBubble.gd" id="1_k0wye"]
+[ext_resource type="Texture2D" uid="uid://cp4sf4ytdpd46" path="res://pixil-frame-0.png" id="2_ik4gd"]
+
+[node name="SpeechBubble" type="Node2D"]
+script = ExtResource("1_k0wye")
+
+[node name="BubblePanel" type="NinePatchRect" parent="."]
+offset_right = 256.0
+offset_bottom = 160.0
+texture = ExtResource("2_ik4gd")
+region_rect = Rect2(0, 0, 256, 144)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="TextContainer" type="MarginContainer" parent="BubblePanel"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 160.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="BubblePanel/TextContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.05

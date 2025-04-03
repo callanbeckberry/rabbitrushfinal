@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dl851j7smypj8"]
+
+[ext_resource type="Shader" path="res://crt_shader.gdshader" id="1_fp6ol"]
+
+[resource]
+shader = ExtResource("1_fp6ol")
+shader_parameter/screen_curvature = 4.572
+shader_parameter/corner_darkness = 0.15
+shader_parameter/vignette_size = 0.8
+shader_parameter/screen_size = Vector2(320, 240)
+shader_parameter/scanline_strength = 0.15
+shader_parameter/noise_strength = 0.07
+shader_parameter/tint_color = Color(0.8, 0.9, 1, 1)
+shader_parameter/rgb_shift = true
+shader_parameter/rgb_shift_amount = 0.5
+shader_parameter/effect_opacity = 0.8

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b253yrcna8xay"]
+
+[ext_resource type="Script" path="res://Coin.gd" id="1_4rguw"]
+[ext_resource type="Texture2D" uid="uid://cxuryokjriuck" path="res://Rabbit mock-Sheet.png" id="2_48qlq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tmu7"]
+atlas = ExtResource("2_48qlq")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnw0w"]
+size = Vector2(16, 16)
+
+[node name="Coin" type="Area2D"]
+position = Vector2(-168, -56)
+collision_layer = 2
+script = ExtResource("1_4rguw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2tmu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fnw0w")

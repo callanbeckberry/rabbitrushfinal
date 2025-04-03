@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c68siytk1qj5k"]
+
+[ext_resource type="Script" path="res://sprint_meter.gd" id="1_5w2ni"]
+[ext_resource type="SpriteFrames" uid="uid://cbuoupg5omofo" path="res://rabbit_sprint.tres" id="2_1e2kx"]
+
+[node name="SprintMeter" type="Node2D"]
+script = ExtResource("1_5w2ni")
+
+[node name="RabbitSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(53, 32)
+scale = Vector2(2.41981, 2.40395)
+sprite_frames = ExtResource("2_1e2kx")
+animation = &"jogging"
+metadata/_edit_lock_ = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
